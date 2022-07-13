@@ -1,6 +1,6 @@
 # LLVM-Installation
 
-##**Installing latest LLVM by cloning:**
+## Installing latest LLVM by cloning:
 ```
 git clone https://github.com/llvm/llvm-project.git
 cd llvm-project
@@ -36,14 +36,12 @@ ninja
 ```
 
 
-##**Installing LLVM-14 or lower version by cloning:**
+## Installing LLVM-14 or lower version by cloning:
 Choose the [llvm-version you want to install.](https://releases.llvm.org/download.html)
 Then go to that particular page and download specifically this file which says: `llvm-project-14.0.6.src.tar.xz`
 
 Then just simply go through the general steps like following:
 ```
-```
-git clone https://github.com/llvm/llvm-project.git
 cd llvm-project
 mkdir build
 cd build
@@ -51,5 +49,7 @@ cmake -G Ninja -DLLVM_ENABLE_RTTI=ON -DLLVM_ENABLE_EH=ON -DBUILD_SHARED_LIBS=ON 
 ninja
 ```
 
-Now, if you run `sudo ninja install` then it will add it to the path but if there is already another llvm present in path then it will collide with the new llvm.
+Now, if you run 
+`sudo ninja install` 
+then it will add it to the path but if there is already another llvm present in path then it will collide with the new llvm.
 
