@@ -49,7 +49,5 @@ cmake -G Ninja -DLLVM_ENABLE_RTTI=ON -DLLVM_ENABLE_EH=ON -DBUILD_SHARED_LIBS=ON 
 ninja
 ```
 
-Now, if you run 
-`sudo ninja install` 
-then it will add it to the path but if there is already another llvm present in path then it will collide with the new llvm.
+Now, if you run `sudo ninja install` then it will add it to the path but if there is already another llvm present in path then it will collide with the new llvm.
 
