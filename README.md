@@ -1,5 +1,31 @@
 # LLVM-Installation
 
+## Install following this [super link](https://apt.llvm.org/)
+1. Goto [apt.llvm.org/](https://apt.llvm.org/)
+2. For 18.04 and llvm-14 you need to add following line in `/etc/apt/sources.list`
+```
+deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-14 main
+deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-14 main
+```
+
+This is for `20.04`,
+```
+deb http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main
+deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main
+```
+3. Fetch the key
+```
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key%7Csudo apt-key add -
+sudo apt update
+```
+4. Now, run this,
+```
+sudo apt install clang-14 llvm-14 llvm-14-dev
+```
+If there is a broken dependency `sudo apt -f install` this will try to fix broken dependencies automatically. If still getting errors, then do this `sudo add-apt-repository ppa:ubuntu-toolchain-r/test`. This is PPA for installing `libstdc++` with C++20 support which is required to install clang-14 (which is mentioned in the doc).  You can read this to understand what is PPA: [askubuntu.com/a/4987](https://askubuntu.com/a/4987)
+
+![previous image of llvm & clang installation](pics/prevImage.png)
+
 ## Installing latest LLVM by cloning:
 ```
 git clone https://github.com/llvm/llvm-project.git
