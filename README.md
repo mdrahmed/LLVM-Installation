@@ -18,6 +18,12 @@ deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key%7Csudo apt-key add -
 sudo apt update
 ```
+Tried this key recently but didn't work, so, I tried this one instead,
+```
+wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
+# Fingerprint: 6084 F3CF 814B 57C1 CF12 EFD5 15CF 4D18 AF4F 7421
+```
+
 4. Now, run this,
 ```
 sudo apt install clang-14 llvm-14 llvm-14-dev
