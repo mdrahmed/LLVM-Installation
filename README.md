@@ -1,5 +1,14 @@
 # LLVM-Installation
 
+## Install from ubuntu pkgs
+```
+sudo apt-get update
+sudo apt-get install -y build-essential python3-dev automake cmake git flex bison libglib2.0-dev libpixman-1-dev python3-setuptools cargo libgtk-3-dev
+# try to install llvm 14 and install the distro default if that fails
+sudo apt-get install -y lld-14 llvm-14 llvm-14-dev clang-14 || sudo apt-get install -y lld llvm llvm-dev clang
+```
+Details is [here in afl++](https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/INSTALL.md#linux-on-x86)
+
 ## Install following this [super link](https://apt.llvm.org/)
 1. Goto [apt.llvm.org/](https://apt.llvm.org/)
 2. For 18.04 and llvm-14 you need to add following line in `/etc/apt/sources.list`
